@@ -1,4 +1,5 @@
 from decorator.beverage_package.condiment_decorator import CondimentDecorator
+from decorator.beverage_package.beverage import Beverage, Size
 
 
 class Mocha(CondimentDecorator):
@@ -7,11 +8,17 @@ class Mocha(CondimentDecorator):
   '''
   
   def __init__(self, beverage):
-    self.beverage = beverage
-    self._unit_price = 0.2
+    CondimentDecorator.__init__(self, beverage)
     
   def getDescription(self):
     return self.beverage.getDescription() + ", Mocha"
     
   def cost(self):
-    return self.beverage.cost() + self._unit_price
+    if(self.beverage.getSize() == Size.TALL):
+      self.unit_price = 0.1
+    elif(self.beverage.getSize() == Size.GRANDE):
+      self.unit_price = 0.2
+    elif(self.beverage.getSize() == Size.VENTI):
+      self.unit_price = 0.3
+    return self.beverage.cost() + self.unit_price
+  
