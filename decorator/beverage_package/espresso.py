@@ -6,6 +6,7 @@ class Espresso(Beverage):
   
   
   def __init__(self):
+    Beverage.__init__(self)
     self.description = "エスプレッソ"
     self.unit_price = 1.99
     
