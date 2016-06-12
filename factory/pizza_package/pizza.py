@@ -1,4 +1,4 @@
-from abc import ABCMeta
+from abc import ABCMeta, abstractmethod
 
 class Pizza(metaclass=ABCMeta):
   '''
@@ -9,15 +9,14 @@ class Pizza(metaclass=ABCMeta):
     self.name = None
     self.dough = None
     self.sauce = None
-    self.toppings = []
+    self.veggies = []
+    self.cheese = None
+    self.pepperoni = None
+    self.Clam = None
     
+  @abstractmethod
   def prepare(self):
-    print(self.name + "を下処理")
-    print("生地をこねる...")
-    print("ソース追加...")
-    print("トッピングを追加...")
-    for topping in self.toppings:
-      print(" " + topping)
+    pass
     
   def bake(self):
     print("350度で25分焼く")
@@ -28,5 +27,8 @@ class Pizza(metaclass=ABCMeta):
   def box(self):
     print("PizzaStoreの正式な箱に入れる")
     
+  def setName(self, name: str):
+    self.name = name
+  
   def getName(self) -> str:
     return self.name
