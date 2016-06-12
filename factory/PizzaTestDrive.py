@@ -14,7 +14,12 @@ class PizzaTestDrive:
   pizza = ny_store.orderPizza("cheese")
   print("イーサンの注文は {0}\n".format(pizza.getName()))
   
-  pizza = chikago_store.orderPizza("cheese")
-  print("ジュエルの注文は {0}\n".format(pizza.getName()))
+  pizza = ny_store.orderPizza("clam")
+  print("イーサンの注文は {0}\n".format(pizza.getName()))
 
+  pizza = chikago_store.orderPizza("cheese")
+  print("ジョエルの注文は {0}\n".format(pizza.getName()))
+  
+  pizza = chikago_store.orderPizza("clam")
+  print("ジョエルの注文は {0}\n".format(pizza.getName()))
 
