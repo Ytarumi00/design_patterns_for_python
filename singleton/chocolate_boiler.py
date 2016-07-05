@@ -1,3 +1,4 @@
+from _winapi import NULL
 
 class ChocolateBoiler:
   '''
@@ -7,6 +8,13 @@ class ChocolateBoiler:
     empty: A boolean indicating if boiler is empty.
     boiled: A boolean indicating if boiler is boiled.
   '''
+  
+  __unique_instance = NULL
+  
+  def __new__(cls):
+    if cls.__unique_instance is NULL:
+      cls.__unique_instance = object.__new__(cls)
+    return cls.__unique_instance
   
   def __init__(self):
     self.empty = True
