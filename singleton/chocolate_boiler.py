@@ -1,4 +1,7 @@
 from _winapi import NULL
+import threading
+import time
+
 
 class ChocolateBoiler:
   '''
@@ -11,12 +14,15 @@ class ChocolateBoiler:
   
   __unique_instance = NULL
   
-  def __new__(cls):
+  def __new__(cls,t):
     if cls.__unique_instance is NULL:
+      time.sleep(t)
       cls.__unique_instance = object.__new__(cls)
+    print(cls.__unique_instance)
     return cls.__unique_instance
-  
-  def __init__(self):
+   
+  def __init__(self,t):
+    super(ChocolateBoiler, self).__init__()
     self.empty = True
     self.boiled = False
     
@@ -48,12 +54,19 @@ class ChocolateBoiler:
   def isBoiled(self):
     return self.boiled
       
+class testThread(threading.Thread):
+  
+  def __init__(self,t):
+    super(testThread, self).__init__()
+    self.wait_t = t
+  def run(self):
+    boiler = ChocolateBoiler(self.wait_t)
+    boiler.fill()
+    boiler.boil()
+    
+
 if __name__ == "__main__":
-  boiler1 = ChocolateBoiler()
-  boiler2 = ChocolateBoiler()
-  boiler1.fill()
-  boiler2.fill()
-  boiler1.boil()
-  boiler2.boil()
-  boiler1.drain()
-  boiler2.drain()
+  thread1 = testThread(0)
+  thread2 = testThread(2)
+  thread1.start()
+  thread2.start()
