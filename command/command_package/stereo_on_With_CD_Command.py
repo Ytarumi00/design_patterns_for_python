@@ -6,7 +6,7 @@ Created on 2016/08/07
 from command.vender_class.stereo import Stereo
 from command.command_package.command import Command
 
-class StreoOnWithCDCommand(Command):
+class StereoOnWithCDCommand(Command):
 
     def __init__(self, stereo: Stereo):
         self.stereo = stereo
