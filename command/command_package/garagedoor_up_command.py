@@ -1,7 +1,7 @@
-from command.commnad_package.command import Command
+from command.command_package.command import Command
 from command.vender_class.garagedoor import GarageDoor
 
-class GarageDoorOpenCommand(Command):
+class GarageDoorUpCommand(Command):
   
   def __init__(self, garagedoor: GarageDoor):
     self.garagedoor = garagedoor

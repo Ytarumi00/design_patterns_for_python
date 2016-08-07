@@ -1,4 +1,4 @@
-from command.commnad_package.command import Command
+from command.command_package.command import Command
 
 class SimpleRemoteControl:
   
