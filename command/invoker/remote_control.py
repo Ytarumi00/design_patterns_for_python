@@ -12,12 +12,11 @@ class RemoteControl:
         self.onCommand = {}
         self.offCommand = {}
         
-        noCommand = NoCommand()
         for slot in range(7):
-            self.onCommand[slot] = noCommand
-            self.offCommand[slot] = noCommand
+            self.onCommand[slot] = NoCommand()
+            self.offCommand[slot] = NoCommand()
             
-    def setCommand(self, slot: int, onCommand: Command, offCommand: Command):
+    def setCommand(self, slot, onCommand, offCommand):
         self.onCommand[slot] = onCommand
         self.offCommand[slot] = offCommand
         
