@@ -7,8 +7,12 @@ from command.command_package.command import Command
 
 class LightOffComand(Command):
 
-    def __init__(self, light):
-        self.light = light
+  def __init__(self, light):
+    self.light = light
         
-    def execute(self):
-        self.light.off()
+  def execute(self):
+    self.light.off()
+      
+  def undo(self):
+    self.light.on()
+    

@@ -9,3 +9,6 @@ class Command(metaclass=ABCMeta):
   def execute(self):
     pass
   
+  @abstractmethod
+  def undo(self):
+    pass
