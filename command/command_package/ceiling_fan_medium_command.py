@@ -23,11 +23,11 @@ class CeilingFanMediumCommand(Command):
         self.ceilingFan.medium()
 
     def undo(self):
-        if(self.prevSpeed == CeilingFan.__HIGH):
+        if(self.prevSpeed == CeilingFan.HIGH):
             self.ceilingFan.high()
-        elif(self.prevSpeed == CeilingFan.__MEDIUM):
+        elif(self.prevSpeed == CeilingFan.MEDIUM):
             self.ceilingFan.medium()
-        elif(self.prevSpeed == CeilingFan.__LOW):
+        elif(self.prevSpeed == CeilingFan.LOW):
             self.ceilingFan.low()
-        elif(self.prevSpeed == CeilingFan.__OFF):
+        elif(self.prevSpeed == CeilingFan.OFF):
             self.ceilingFan.off()
