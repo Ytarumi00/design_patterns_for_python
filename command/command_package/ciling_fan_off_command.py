@@ -7,7 +7,7 @@ from command.command_package.command import Command
 from command.vender_class.ceiling_fan import CeilingFan
 
 
-class CeilingFanOffCommadn(Command):
+class CeilingFanOffCommand(Command):
     '''
     concrete command class for ceiling fan status changed high
     '''
