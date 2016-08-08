@@ -8,5 +8,8 @@ class LightOnCommand(Command):
     
   def execute(self):
     self.light.on()
+    
+  def undo(self):
+    self.light.off()
 
 
