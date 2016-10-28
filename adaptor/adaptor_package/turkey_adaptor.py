@@ -16,6 +16,9 @@ class TurkeyAdaptor(Duck):
         Set turkey instance
         '''
         self.turkey = turkey
-        
-    def quack(self):
-        
+
+    def perform_quack(self):
+        self.turkey.gobble()
+
+    def perform_fly(self):
+        self.turkey.fly()
