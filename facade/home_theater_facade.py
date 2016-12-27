@@ -3,14 +3,14 @@ Created on 2016/12/27
 
 @author: yu-suke
 '''
-from facade.modules.Amplifier import Amplifier
-from facade.modules.DvdPlayer import DvdPlayer
-from facade.modules.CdPlayer import CdPlayer
-from facade.modules.Projector import Projector
-from facade.modules.Screen import Screen
-from facade.modules.TheaterLights import TheaterLights
-from facade.modules.PopcornPopper import PopcornPopper
-from facade.modules.Tuner import Tuner
+from facade.modules.amplifier import Amplifier
+from facade.modules.dvd_player import DvdPlayer
+from facade.modules.cd_player import CdPlayer
+from facade.modules.projector import Projector
+from facade.modules.screen import Screen
+from facade.modules.theater_lights import TheaterLights
+from facade.modules.popcorn_popper import PopcornPopper
+from facade.modules.tuner import Tuner
 
 
 class HomeTheaterFacade(object):
