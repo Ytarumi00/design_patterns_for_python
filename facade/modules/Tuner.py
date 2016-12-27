@@ -14,7 +14,7 @@ class Tuner:
         '''
         Constructor
         '''
-        self.amplifier = None
+        self.__amplifier = None
 
     def on(self):
         print("turn on tuner")
@@ -23,7 +23,7 @@ class Tuner:
         print("turn off tuner")
 
     def set_am(self, am):
-        self.amplifier = am
+        self.__amplifier = am
 
     def set_fm(self, fm):
         pass

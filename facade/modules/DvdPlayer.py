@@ -14,7 +14,7 @@ class DvdPlayer(object):
         '''
         Constructor
         '''
-        self.amplifier = None
+        self.__amplifier = None
 
     def on(self):
         print("turn on dvd player")

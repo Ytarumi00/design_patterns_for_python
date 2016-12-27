@@ -25,39 +25,39 @@ class HomeTheaterFacade(object):
         Constructor
         '''
 
-        self.amp = amp
-        self.tuner = tuner
-        self.dvd = dvd
-        self.cd = cd
-        self.projector = projector
-        self.screen = screen
-        self.lights = lights
-        self.popper = popper
+        self.__amp = amp
+        self.__tuner = tuner
+        self.__dvd = dvd
+        self.__cd = cd
+        self.__projector = projector
+        self.__screen = screen
+        self.__lights = lights
+        self.__popper = popper
 
     def watch_movie(self, movie):
         print("Be preparing to watch movie ...")
-        self.popper.on()
-        self.popper.pop()
-        self.lights.dim(10)
-        self.screen.down()
-        self.projector.on()
-        self.projector.wide_screen_mode()
-        self.amp.on()
-        self.amp.set_surround_sound()
-        self.amp.set_volume(8)
-        self.dvd.on()
-        self.dvd.play(movie)
+        self.__popper.on()
+        self.__popper.pop()
+        self.__lights.dim(10)
+        self.__screen.down()
+        self.__projector.on()
+        self.__projector.wide_screen_mode()
+        self.__amp.on()
+        self.__amp.set_surround_sound()
+        self.__amp.set_volume(8)
+        self.__dvd.on()
+        self.__dvd.play(movie)
 
     def end_movie(self):
         print("Be stopping to watch movie")
-        self.popper.off()
-        self.lights.on()
-        self.screen.down()
-        self.projector.off()
-        self.amp.off()
-        self.dvd.stop()
-        self.dvd.eject()
-        self.dvd.off()
+        self.__popper.off()
+        self.__lights.on()
+        self.__screen.down()
+        self.__projector.off()
+        self.__amp.off()
+        self.__dvd.stop()
+        self.__dvd.eject()
+        self.__dvd.off()
 
 if __name__ == "__main__":
     amp = Amplifier()
