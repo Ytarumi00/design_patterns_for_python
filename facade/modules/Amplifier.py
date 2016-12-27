@@ -14,10 +14,10 @@ class Amplifier:
         '''
         Constructor
         '''
-        self.tuner = None
-        self.dvd_player = None
-        self.cd_player = None
-        self.volume = 5
+        self.__tuner = None
+        self.__dvd_player = None
+        self.__cd_player = None
+        self.__volume = 5
 
     def on(self):
         print("turn on amp")
@@ -26,10 +26,10 @@ class Amplifier:
         print("turn off amp")
 
     def set_cd(self, cd):
-        self.cd_player = cd
+        self.__cd_player = cd
 
     def set_dvd(self, dvd):
-        self.dvd_player = dvd
+        self.__dvd_player = dvd
 
     def set_stereo_sound(self):
         print("set amp to stereo sound")
@@ -38,8 +38,8 @@ class Amplifier:
         print("set amp to surround sound")
 
     def set_tuner(self, tuner):
-        self.tuner = tuner
+        self.__tuner = tuner
 
     def set_volume(self, volume):
-        self.volume = volume
-        print("set amp volume to 5")
+        self.__volume = volume
+        print("set amp __volume to 5")
