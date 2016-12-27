@@ -17,6 +17,25 @@ class Coffee(CaffeineBeverage):
     def add_condiments(self):
         print("add sugar and milk")
 
+    def customer_wants_condiments(self):
+        answer = self.get_user_input()
+
+        if(answer.lower()[0] == "y"):
+            return True
+        else:
+            return False
+
+    def get_user_input(self):
+        answer = None
+
+        print("Do you put milk and sugar in your coffee?")
+
+        answer = input()
+        if(answer is None or answer == ""):
+            return "no"
+        return answer
+
+
 if __name__ == "__main__":
     coffee = Coffee()
     coffee.prepare_recipe()

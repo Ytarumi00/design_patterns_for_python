@@ -16,7 +16,8 @@ class CaffeineBeverage(metaclass=ABCMeta):
         self.boil_water()
         self.brew()
         self.pour_in_cup()
-        self.add_condiments()
+        if(self.customer_wants_condiments()):
+            self.add_condiments()
 
     @abstractmethod
     def brew(self):
@@ -31,3 +32,6 @@ class CaffeineBeverage(metaclass=ABCMeta):
 
     def pour_in_cup(self):
         print("pour in cup")
+
+    def customer_wants_condiments(self):
+        return True
