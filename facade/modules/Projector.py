@@ -14,7 +14,7 @@ class Projector(object):
         '''
         Constructor
         '''
-        self.dvdplayer = None
+        self.__dvdplayer = None
 
     def on(self):
         print("turn on projector")
