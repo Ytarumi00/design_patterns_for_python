@@ -8,6 +8,7 @@ from myiterator.diner_menu import DinerMenu
 from myiterator.iterator import Iterator
 from myiterator.menu_item import MenuItem
 from myiterator.menu import Menu
+from myiterator.cafe_menu import CafeMenu
 
 
 class Waitress(object):
@@ -15,21 +16,15 @@ class Waitress(object):
     Waitress class
     '''
 
-    def __init__(self, pancake_house_menu: Menu,
-                 diner_menu: Menu):
+    def __init__(self, menus: list):
         '''
         Constructor
         '''
-        self.pancake_house_menu = pancake_house_menu
-        self.diner_menu = diner_menu
+        self.__menus = menus
 
     def display_menu(self):
-        pancake_iterator = self.pancake_house_menu.create_iterator()
-        diner_menu = self.diner_menu.create_iterator()
-        print("breakfast menu\n")
-        self.print_menu(pancake_iterator)
-        print("diner menu\n")
-        self.print_menu(diner_menu)
+        for menu in self.__menus:
+            self.print_menu(menu)
 
     def print_menu(self, iterator: Iterator):
         for menu_item in iterator:
@@ -40,7 +35,11 @@ class Waitress(object):
 if __name__ == "__main__":
     pancake_house_menu = PancakeHouseMenu()
     diner_menu = DinerMenu()
+    cafe_menu = CafeMenu()
+    menus = [pancake_house_menu.create_iterator(),
+             diner_menu.create_iterator(),
+             cafe_menu.create_iterator()]
 
-    waitress = Waitress(pancake_house_menu, diner_menu)
+    waitress = Waitress(menus)
 
     waitress.display_menu()
