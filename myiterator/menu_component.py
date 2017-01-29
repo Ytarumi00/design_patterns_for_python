@@ -3,9 +3,10 @@ Created on 2017/01/29
 
 @author: yu-suke
 '''
+from abc import ABCMeta
 
 
-class MenuComponent(object):
+class MenuComponent(metaclass=ABCMeta):
     '''
     MenuComponent class
     '''
@@ -15,10 +16,10 @@ class MenuComponent(object):
         Constructor
         '''
 
-    def add(self, menu_component: MenuComponent):
+    def add(self, menu_component):
         raise UserWarning("unsupported operation.")
 
-    def remove(self, menu_component: MenuComponent):
+    def remove(self, menu_component):
         raise UserWarning("unsupported operation.")
 
     def get_child(self, i: int):
@@ -36,5 +37,5 @@ class MenuComponent(object):
     def is_vegetarian(self):
         raise UserWarning("unsupported operation.")
 
-    def print(self):
+    def display(self):
         raise UserWarning("unsupported operation.")

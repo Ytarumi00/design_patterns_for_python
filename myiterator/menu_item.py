@@ -3,9 +3,10 @@ Created on 2017/01/06
 
 @author: yu-suke
 '''
+from myiterator.menu_component import MenuComponent
 
 
-class MenuItem(object):
+class MenuItem(MenuComponent):
     '''
     MenuItem class
     '''
@@ -30,3 +31,11 @@ class MenuItem(object):
 
     def get_price(self):
         return self.price
+
+    def display(self):
+        if(self.vegetarian is True):
+            print(" {}(v), {}\n--{}".
+                  format(self.name, self.price, self.description))
+        else:
+            print(" {}, {}\n--{}".
+                  format(self.name, self.price, self.description))
