@@ -5,6 +5,7 @@ Created on 2017/01/09
 '''
 from abc import ABCMeta, abstractmethod
 from myiterator.menu_component import MenuComponent
+from myiterator.composite_iterator import CompositeIterator
 
 
 class Menu(MenuComponent, metaclass=ABCMeta):
@@ -40,3 +41,6 @@ class Menu(MenuComponent, metaclass=ABCMeta):
 
         for menu_component in self.menu_components:
             menu_component.display()
+
+    def create_iterator(self):
+        return CompositeIterator(iter(self.menu_components))

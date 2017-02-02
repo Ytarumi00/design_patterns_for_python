@@ -10,6 +10,7 @@ from myiterator.menu_item import MenuItem
 from myiterator.menu import Menu
 from myiterator.cafe_menu import CafeMenu
 from myiterator.menu_component import MenuComponent
+from myiterator import menu_component
 
 
 class Waitress(object):
@@ -25,3 +26,14 @@ class Waitress(object):
 
     def display_menu(self):
         self.__all_menus.display()
+
+    def display_vegetarian_menu(self):
+        iterator = self.__all_menus.create_iterator()
+        print("--vegetable menu--")
+        for menu_component in iterator:
+            try:
+                if(menu_component.is_vegetarian()):
+                    menu_component.display()
+                    print("\n")
+            except UserWarning as e:
+                pass

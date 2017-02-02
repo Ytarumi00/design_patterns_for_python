@@ -61,3 +61,5 @@ class MenuTestDriver(object):
     waitress = Waitress(all_menus)
 
     waitress.display_menu()
+    print("\n\n")
+    waitress.display_vegetarian_menu()

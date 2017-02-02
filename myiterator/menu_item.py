@@ -4,6 +4,7 @@ Created on 2017/01/06
 @author: yu-suke
 '''
 from myiterator.menu_component import MenuComponent
+from myiterator.null_iterator import NullIterator
 
 
 class MenuItem(MenuComponent):
@@ -26,7 +27,7 @@ class MenuItem(MenuComponent):
     def get_description(self):
         return self.description
 
-    def get_vegetarian(self):
+    def is_vegetarian(self):
         return self.vegetarian
 
     def get_price(self):
@@ -39,3 +40,6 @@ class MenuItem(MenuComponent):
         else:
             print(" {}, {}\n--{}".
                   format(self.name, self.price, self.description))
+
+    def create_iterator(self):
+        return NullIterator()
