@@ -12,7 +12,8 @@ __author__ = "Y.Tarumi<y.tarumi00+dev@gmail.com>"
 __version__ = "1.0.0"
 __date__ = "10/28/2016"
 
-def testDuck(duck :Duck):
+
+def exe_duck(duck: Duck):
     duck.perform_quack()
     duck.perform_fly()
 
@@ -28,7 +29,7 @@ if __name__ == '__main__':
     turkey.fly()
 
     print("\nDuckの出力・・・")
-    testDuck(duck)
+    exe_duck(duck)
 
     print("\nTurkeyAdapterの出力・・・")
-    testDuck(turkeyAdaptor)
+    exe_duck(turkeyAdaptor)
