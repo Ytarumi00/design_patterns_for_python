@@ -25,7 +25,7 @@ class GumballMachine(object):
         self._sold_state = SoldState(self)
         self._winner_state = WinnerState(self)
         self._count = num_gumballs
-        if self._count > 1:
+        if self._count > 0:
             self._state = self._no_quarter_state
         else:
             self._state = self._sold_out_sate
@@ -45,7 +45,7 @@ class GumballMachine(object):
 
     def release_ball(self):
         print("Gum ball rolls out of the slot...")
-        if self._count != 0:
+        if self._count > 0:
             self._count -= 1
 
     def get_sold_out_state(self):
@@ -63,10 +63,13 @@ class GumballMachine(object):
     def get_winner_state(self):
         return self._winner_state
 
-    @property
-    def count(self):
-        pass
+    def refill(self, count):
+        if count > 0:
+            self._count += count
+            self._state = self.get_no_quarter_state()
+        else:
+            raise UserWarning("count is upper than 0")
 
-    @count.getter
+    @property
     def count(self):
         return self._count
