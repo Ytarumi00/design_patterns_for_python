@@ -7,6 +7,7 @@ from state.sold_out_state import SoldOutState
 from state.no_quarter_state import NoQuarterState
 from state.has_quarter_state import HasQuarterState
 from state.sold_state import SoldState
+from state.winner_state import WinnerState
 
 
 class GumballMachine(object):
@@ -22,6 +23,7 @@ class GumballMachine(object):
         self._no_quarter_state = NoQuarterState(self)
         self._has_quarter_state = HasQuarterState(self)
         self._sold_state = SoldState(self)
+        self._winner_state = WinnerState(self)
         self._count = num_gumballs
         if self._count > 1:
             self._state = self._no_quarter_state
@@ -57,6 +59,9 @@ class GumballMachine(object):
 
     def get_sold_state(self):
         return self._sold_state
+
+    def get_winner_state(self):
+        return self._winner_state
 
     @property
     def count(self):

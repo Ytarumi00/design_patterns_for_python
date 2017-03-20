@@ -7,29 +7,8 @@ from state.gum_ball_machine import GumballMachine
 
 
 if __name__ == '__main__':
-    gum_ball_machine = GumballMachine(2)
+    gum_ball_machine = GumballMachine(20)
 
-    print(gum_ball_machine)
-
-    gum_ball_machine.insert_quarter()
-    gum_ball_machine.turn_crank()
-    print()
-
-    gum_ball_machine.insert_quarter()
-    gum_ball_machine.eject_quarter()
-    gum_ball_machine.turn_crank()
-    print()
-
-    gum_ball_machine.insert_quarter()
-    gum_ball_machine.turn_crank()
-    gum_ball_machine.turn_crank()
-    print()
-
-    gum_ball_machine.insert_quarter()
-    gum_ball_machine.insert_quarter()
-    gum_ball_machine.turn_crank()
-    print()
-
-    gum_ball_machine.insert_quarter()
-    gum_ball_machine.insert_quarter()
-    gum_ball_machine.turn_crank()
+    for i in range(20):
+        gum_ball_machine.insert_quarter()
+        gum_ball_machine.turn_crank()

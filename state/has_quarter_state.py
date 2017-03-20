@@ -4,6 +4,7 @@ Created on 2017/03/18
 @author: yu-suke
 '''
 from state.abc_state import State
+from random import randrange
 
 
 class HasQuarterState(State):
@@ -27,8 +28,12 @@ class HasQuarterState(State):
 
     def turn_crank(self):
         print("Turned the crank")
-        self._gum_ball_machine.set_state(
-            self._gum_ball_machine.get_sold_state())
+        if randrange(10) == 0:
+            self._gum_ball_machine.set_state(
+                self._gum_ball_machine.get_winner_state())
+        else:
+            self._gum_ball_machine.set_state(
+                self._gum_ball_machine.get_sold_state())
 
     def dispense(self):
         print("There is no gum ball to sell")

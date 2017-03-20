@@ -32,5 +32,6 @@ class SoldState(State):
             self._gum_ball_machine.set_state(
                 self._gum_ball_machine.get_no_quarter_state())
         else:
+            print("Gum ball are gone.")
             self._gum_ball_machine.set_state(
                 self._gum_ball_machine.get_sold_out_state())
