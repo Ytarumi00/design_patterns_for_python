@@ -12,3 +12,5 @@ if __name__ == '__main__':
     for i in range(20):
         gum_ball_machine.insert_quarter()
         gum_ball_machine.turn_crank()
+        print(gum_ball_machine.count)
+        print()
